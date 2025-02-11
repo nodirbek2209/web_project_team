@@ -1,13 +1,85 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Bliss</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Gourmet Bliss</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Slider -->
+    <section class="hero">
+        <div class="slider">
+            <img id="slide" src="images/slide1.jpg" alt="Restaurant dish">
+        </div>
+        <button class="next-btn" onclick="nextSlide()">Next</button>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <h2>Our Special Dishes</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="images/pasta.jpg" alt="Pasta">
+                <h3>Pasta</h3>
+                <p>Delicious and fresh Pasta served with love.</p>
+            </div>
+            <div class="menu-item">
+                <img src="images/steak.jpg" alt="Steak">
+                <h3>Steak</h3>
+                <p>Premium steak cooked to perfection.</p>
+            </div>
+            <div class="menu-item">
+                <img src="images/dessert.jpg" alt="Dessert">
+                <h3>Dessert</h3>
+                <p>Sweet and tasty desserts to complete your meal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>At Gourmet Bliss, we serve high-quality dishes made from fresh ingredients, inspired by world cuisines.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@gourmetbliss.com</p>
+        <p>Phone: +123 456 7890</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Gourmet Bliss. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = ["images/slide1.jpg", "images/slide2.jpg", "images/slide3.jpg"];
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            document.getElementById("slide").src = slides[slideIndex];
+        }
+    </script>
+</body>
 </html>
